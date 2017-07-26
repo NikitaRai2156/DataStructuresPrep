@@ -17,12 +17,18 @@ int searchArr(int arr[], int l, int r, int num){
 
 int insertInArr(int arr[], int n, int num) {
     int i;
-    n++;
-    for(i=n-1;(i>=0 && arr[i] >= num);i--){
-        arr[i+1] = arr[i];
+    if(n>=9){
+        printf("\nItem cannot be inserted!");
+        return n;
     }
-    arr[i+1] = num;
-    return n;
+    else{
+        n++;
+        for(i=n-1;(i>=0 && arr[i] >= num);i--){
+            arr[i+1] = arr[i];
+        }
+        arr[i+1] = num;
+        return n;
+    }
 }
 
 int deleteFromArr(int arr[], int n, int num, int index) {
